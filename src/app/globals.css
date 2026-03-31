@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-supernova-teal: #00C896;
+  --color-supernova-primary: #34D399;
+  --color-supernova-amber: #E07A00;
+  --color-supernova-bg: #0A0A0A;
+  --color-supernova-bg1: #0F0F0F;
+  --color-supernova-bg2: #141414;
+  --color-supernova-bg-main: #070908;
+  --color-supernova-text: #FFFFFF;
+  --color-supernova-text-main: #DBE8DC;
+  --color-supernova-text-muted: #B0C1B1;
+  --color-supernova-muted: #555555;
+  --color-supernova-mid: #888888;
+  --color-supernova-border: rgba(255, 255, 255, 0.06);
+  --color-supernova-grid-line: rgba(255, 255, 255, 0.04);
+  --color-supernova-primary-glow: rgba(52, 211, 153, 0.15);
+
+  --font-sans: var(--font-mulish), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-condensed: var(--font-barlow-condensed), sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --tracking-superwide: 0.2em;
+  --tracking-wide: 0.12em;
+}
+
+:root {
+  --background: var(--color-supernova-bg-main);
+  --foreground: var(--color-supernova-text-main);
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    font-family: var(--font-mulish), var(--font-sans), sans-serif;
+    @apply antialiased overflow-x-hidden;
+    background-image:
+      linear-gradient(var(--color-supernova-grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-supernova-grid-line) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-barlow-condensed), var(--font-condensed), sans-serif;
+  }
+}
+
+@layer utilities {
+  .background-glow {
+    @apply fixed inset-0 pointer-events-none -z-10;
+    background: radial-gradient(circle at 100% 0%, rgba(52, 211, 153, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 0% 100%, rgba(52, 211, 153, 0.05) 0%, transparent 40%);
+  }
+
+  .reveal {
+    @apply opacity-0 translate-y-6 transition-all duration-700 ease-in-out;
+  }
+
+  .reveal.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
