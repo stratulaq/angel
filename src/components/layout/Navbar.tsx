@@ -19,8 +19,19 @@ export default function Navbar({ variant = 'main' }: NavbarProps) {
               className="h-[36px] md:h-[42px] w-auto brightness-125"
             />
           </Link>
-          <Link href="mailto:mihail@supernova.center" className="font-mono text-[10px] md:text-xs tracking-superwide uppercase text-supernova-text-muted flex transition-colors duration-300 hover:text-supernova-primary">mihail@supernova.center</Link>
-          {/* <Link href="#confidential" className="transition-colors duration-300 hover:text-supernova-primary">Protocol [V.4]</Link> */}
+          <div className="flex items-center gap-4">
+            <span className="text-sm tracking-wider hidden md:flex items-center font-mono text-supernova-text-muted "> Investor relations | Confidential</span>
+            <Link
+              href="https://angel.supernova.center/SN_deck.pdf"
+              target="_blank"
+              className="text-sm tracking-wider bg-supernova-teal text-black font-semibold px-4 py-1 md:px-6 md:py-3 no-underline gap-2 flex items-center transition-opacity hover:opacity-85"
+            >
+              <svg width="13" height="13" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v8M3 7l3 2 3-2M1 11h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              View investor deck
+            </Link>
+          </div>
         </nav>
       </header>
     );

@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import TractionChart from './TractionChart';
+import ServiceToSoftwareScheme from './ServiceToSoftwareScheme';
+import WhyWeWinScheme from './WhyWeWinScheme';
 
 export default function InvestorPortal() {
 
@@ -15,13 +17,13 @@ export default function InvestorPortal() {
             <span className="w-1.5 h-1.5 rounded-full bg-supernova-teal animate-pulse" />
             Pre-seed investment round · 2026
           </div>
-          <h1 className="font-condensed text-[clamp(48px,7vw,96px)] font-bold leading-[0.96] tracking-tight mb-12">
+          <h1 className="font-condensed text-[clamp(48px,7vw,96px)] font-bold leading-[0.96] tracking-tight mb-12 uppercase">
             $500K to unlock<br />
             <em className="not-italic text-supernova-teal">$1M ARR</em><br />
             <span className="text-white/50">in 2026.</span>
           </h1>
           <p className=" text-xl font-light text-white/60 leading-relaxed border-l-2 border-supernova-teal pl-7 mb-14">
-            500,000 U.S. OTR carriers operate without a real back office. <strong className="text-white font-medium">Supernova is building it for them</strong> — as a software-powered operation from day one.<br /><br />
+            500,000 U.S. OTR carriers operate without a real back office. <br /><strong className="text-white font-medium">Supernova is building it for them</strong> — as a software-powered operation from day one.<br /><br />
             We are already live, generating revenue, and onboarding carriers. The bottleneck is not demand. It is dispatcher capacity. This round removes it.
           </p>
           <div className="flex flex-wrap gap-5 items-center">
@@ -52,10 +54,11 @@ export default function InvestorPortal() {
             <div className="text-xs uppercase text-white/60 mb-2.5">Monthly recurring revenue</div>
             <TractionChart />
             <div className="flex justify-between mt-2 font-mono text-[10px] md:text-xs ">
-              <div className="text-white/40">Apr '25</div>
-              <div className="text-supernova-teal font-semibold">Mar '26</div>
-              <div className="text-supernova-teal">Apr '26 ↑</div>
-              <div className="text-supernova-amber">+ pipeline →</div>
+              <div className="text-white/40 flex-1">Apr '25</div>
+              {/* <div className="text-supernova-teal font-semibold flex-1">Mar '26</div> */}
+              <div className="text-supernova-teal text-right flex-1 pr-8">Apr '26 ↑<br />
+                <div className="text-supernova-amber">+ pipeline →</div>
+              </div>
             </div>
           </div>
 
@@ -89,7 +92,7 @@ export default function InvestorPortal() {
               </div>
               <div className="text-right shrink-0">
                 <div className="text-xs text-white/50 mb-0.5">avg MRR</div>
-                <div className="font-condensed text-[26px] font-bold text-white/75 tracking-tight">~$7K</div>
+                <div className="font-condensed text-[26px] font-bold text-white/75 tracking-tight">$5.85K</div>
               </div>
             </div>
           </div>
@@ -125,11 +128,11 @@ export default function InvestorPortal() {
           </div>
 
           {/* Bottom note */}
-          <div className="px-7 py-4">
+          {/* <div className="px-7 py-4">
             <div className="text-sm text-white/75 leading-relaxed font-light">
               The bottleneck is not demand, not product, not market. <strong className="text-white font-medium">This raise removes it.</strong>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -140,29 +143,19 @@ export default function InvestorPortal() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <div>
-            <h2 className="font-condensed text-[clamp(36px,4vw,56px)] font-bold leading-[1.05] tracking-tight mb-5">
+            <h2 className="font-condensed text-[clamp(36px,4vw,56px)] font-bold leading-[1.05] tracking-tight mb-5 uppercase">
               Service on the surface.<br /><em className="font-condensed text-supernova-teal">Software underneath.</em>
             </h2>
             <p className="text-lg text-white/75 font-medium mb-3 leading-snug">The carrier sees an operation. We are building a platform.</p>
             <div className="text-lg font-light text-white/60 leading-relaxed">
-              To the carrier, Supernova looks like a back office service.<br /><br />
-              What Supernova builds underneath is proprietary software that runs the workflow itself.<br /><br />
-              That distinction matters. Service businesses scale with headcount. Supernova uses service delivery to install software into the operation, capture the workflow, and build the infrastructure layer underneath it.<br /><br />
-              This is not a traditional service company. It is a software company using service as its wedge.
+              To the carrier, Supernova is a back office that just runs. No setup. No adoption. No change.<br /><br />
+              What is actually happening is different. Every step of that operation runs through software Supernova builds and owns. Service delivery is the distribution. The software is the business.<br /><br />
+              Service companies scale with headcount. <br />
+              <strong className="text-supernova-teal font-semibold">Supernova scales with data.</strong>
             </div>
           </div>
           <div className="flex flex-col border-t border-white/7">
-            {[
-              { tag: 'What the carrier sees', head: 'A back office that works.', body: 'Dispatch, compliance, billing, and rate negotiation handled from day one.' },
-              { tag: 'What is actually being built', head: 'Proprietary software behind the workflow.', body: 'Every operational step runs through systems we build and own, turning service delivery into software, data, and decision infrastructure.' },
-              { tag: 'Why this matters', head: 'Software economics beneath service revenue.', body: 'The operation generates revenue today, while the software captures the workflow, intelligence, and automation layer that create long-term enterprise value.' }
-            ].map((row, idx) => (
-              <div key={idx} className="py-8 border-b border-white/7">
-                <div className="text-xs text-supernova-teal tracking-widest uppercase mb-2.5">{row.tag}</div>
-                <div className="text-lg font-semibold text-white/85 mb-2.5 leading-tight">{row.head}</div>
-                <div className=" font-light text-white/75 leading-relaxed">{row.body}</div>
-              </div>
-            ))}
+            <ServiceToSoftwareScheme />
           </div>
         </div>
       </section>
@@ -174,28 +167,25 @@ export default function InvestorPortal() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <div>
-            <h2 className="font-condensed text-[clamp(36px,4vw,56px)] font-bold leading-[1.1] tracking-tight mb-8">
+            <h2 className="font-condensed text-[clamp(36px,4vw,56px)] font-bold leading-[1.1] tracking-tight mb-8 uppercase">
               While others wait for adoption.<br /><em className="italic text-supernova-teal">Supernova is already at the Epicenter.</em>
             </h2>
-            <div className="text-lg font-light text-white/60 leading-relaxed">
-              Most trucking software is built outside the operation and depends on carriers changing behavior to adopt it.<br /><br />
-              Supernova is the operation. It is present at the exact moment trucking happens — on every broker call, every load decision, every cash flow event that makes or breaks a carrier's week.<br /><br />
-              That gives Supernova something software-first players do not have: direct operational visibility, proprietary execution data, and the ability to automate from within the workflow instead of selling into it from the outside.<br /><br />
-              This advantage compounds with every load handled.
+            <div className="text-lg font-light text-white/75 leading-relaxed mb-8">
+              Trucking carriers need a back office to survive. <br />
+              They cannot build one themselves. <br />
+              Software tools require behavior change — they won't. <br />
+              Human dispatchers are expensive, don't scale, and don't compound.<br /><br />
+              Supernova doesn't require the carrier to change anything. It just runs. And because it runs, it learns. Because it learns, it improves. Because it improves, it compounds.<br /><br />
+              The <strong className="text-supernova-teal font-medium">network effect</strong> is invisible to the carrier but structurally irreversible. The longer they stay, the more they depend on what Supernova built around them. Leaving doesn't mean cancelling a service — it means losing infrastructure they cannot rebuild alone.
+            </div>
+            <div className="text-lg font-bold text-white leading-relaxed">
+              Supernova is the operation.<br />
+              Supernova is there when trucking happens.<br />
+              Supernova is the software and the back office. Simultaneously.
             </div>
           </div>
           <div className="flex flex-col border-t border-white/7">
-            {[
-              { n: '01', t: '<strong>We operate at the point of execution.</strong> Not after the fact. In the live workflow where dispatch decisions, broker interactions, and carrier outcomes actually happen.' },
-              { n: '02', t: '<strong>Every load creates proprietary operating data.</strong> Pricing behavior, broker responsiveness, carrier reliability, exception patterns, and cash flow timing — generated through execution, not assumptions.' },
-              { n: '03', t: '<strong>Execution data becomes automation advantage.</strong> Because we run the workflow ourselves, we see what should be standardized, assisted, and automated first — and we can ship against real operational truth.' },
-              { n: '04', t: '<strong>The moat compounds with scale.</strong> More carriers and more loads improve the workflow, deepen the data layer, and increase switching friction. Competitors can build software, but they cannot recreate execution history.' }
-            ].map((pt, idx) => (
-              <div key={idx} className="grid grid-cols-[32px_1fr] gap-4 py-6 border-b border-white/7">
-                <span className="font-mono text-sm text-white/50 pt-1">{pt.n}</span>
-                <span className=" text-white/75 leading-relaxed" dangerouslySetInnerHTML={{ __html: pt.t }} />
-              </div>
-            ))}
+            <WhyWeWinScheme />
           </div>
         </div>
       </section>
@@ -207,7 +197,7 @@ export default function InvestorPortal() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-20 items-center">
           <div>
-            <h2 className="font-condensed text-[clamp(36px,4vw,56px)] font-bold leading-[1.05] tracking-tight mb-5">
+            <h2 className="font-condensed text-[clamp(36px,4vw,56px)] font-bold leading-[1.05] tracking-tight mb-5 uppercase">
               Closing our<br /><em className="italic text-supernova-teal">pre-seed now.</em>
             </h2>
             <p className="text-lg font-light text-white/60 leading-relaxed mb-12">
@@ -220,7 +210,7 @@ export default function InvestorPortal() {
                 { period: '2028 · Series A', ms: '650–1,000+ trucks · $8–16M ARR', ex: 'Full back-office stack at scale. AI Co-Worker ② takes over execution. Human team manages exceptions. Cost structure flattens as revenue compounds. The infrastructure is fully autonomous.', val: '$10M–$20M' },
                 { period: 'Pre-seed return', ms: 'At $5M cap · Series A exit', ex: 'At 7–10× revenue on a $70M–$160M exit. Pre-seed investors entering at $5M cap achieve 14–32× return. The $500K today is the earliest position in the cap table.', val: '14–32×', amber: true }
               ].map((row, idx) => (
-                <div key={idx} className="grid grid-cols-1 md:grid-cols-[148px_1fr_auto] gap-7 py-8 border-b border-white/7  items-start">
+                <div key={idx} className={`grid grid-cols-1 md:grid-cols-[148px_1fr_auto] gap-7 py-8 px-4 border-b items-start transition-colors ${row.amber ? 'border-supernova-amber/40 border' : 'border-white/7'}`}>
                   <span className="font-mono text-xs text-white/50 tracking-widest uppercase">{row.period}</span>
                   <div>
                     <div className="text-lg font-semibold text-white mb-2 leading-tight">{row.ms}</div>
@@ -340,7 +330,7 @@ export default function InvestorPortal() {
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M6 1v8M3 7l3 2 3-2M1 11h10" stroke="#00C896" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
-            Download Full Deck
+            View investor deck
           </Link>
         </div>
       </div>

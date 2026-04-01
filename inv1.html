@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supernova — Pre-Seed Round 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --teal: #00C896;
+            --amber: #E07A00;
+            --bg: #0A0A0A;
+            --bg1: #111111;
+            --text: #F0F0F0;
+            --sub: #999;
+            --dim: #555;
+            --border: rgba(255, 255, 255, 0.07);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 64px;
+            height: 56px;
+            background: rgba(10, 10, 10, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .nav-logo-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--teal);
+            letter-spacing: 0.01em;
+        }
+
+        .nav-logo-sub {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--dim);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-conf {
+            font-size: 12px;
+            color: var(--dim);
+        }
+
+        .nav-dl {
+            font-size: 13px;
+            color: var(--sub);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            transition: all 0.2s;
+        }
+
+        .nav-dl:hover {
+            color: var(--teal);
+            border-color: rgba(0, 200, 150, 0.35);
+        }
+
+        /* HERO */
+        .hero-eyebrow {
+            font-size: 13px;
+            color: var(--teal);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--teal);
+            animation: blink 1.8s infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0.15
+            }
+        }
+
+        h1 {
+            font-size: clamp(40px, 5.5vw, 72px);
+            font-weight: 600;
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            margin-bottom: 32px;
+        }
+
+        h1 em {
+            font-style: italic;
+            color: var(--teal);
+            font-weight: 400;
+        }
+
+        h1 .dim {
+            color: var(--dim);
+        }
+
+        .hero-subtitle {
+            max-width: 580px;
+            font-size: 19px;
+            font-weight: 300;
+            color: var(--sub);
+            line-height: 1.75;
+            border-left: 2px solid var(--teal);
+            padding-left: 24px;
+            margin-bottom: 48px;
+        }
+
+        .hero-subtitle strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            font-size: 14px;
+            font-weight: 500;
+            background: var(--teal);
+            color: #0A0A0A;
+            padding: 12px 24px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.85;
+        }
+
+        .btn-ghost {
+            font-size: 14px;
+            color: var(--sub);
+            text-decoration: none;
+            border-bottom: 1px solid var(--dim);
+            padding-bottom: 1px;
+            transition: color 0.2s;
+        }
+
+        .btn-ghost:hover {
+            color: var(--text);
+        }
+
+        /* SECTIONS */
+        .sec {
+            padding: 96px 64px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sec-label {
+            font-size: 12px;
+            color: var(--teal);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 48px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .sec-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        h2 {
+            font-size: clamp(28px, 3.2vw, 44px);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        h2 em {
+            font-style: italic;
+            color: var(--teal);
+            font-weight: 400;
+        }
+
+        .sec-body {
+            font-size: 17px;
+            font-weight: 300;
+            color: var(--sub);
+            line-height: 1.8;
+            max-width: 520px;
+            margin-bottom: 52px;
+        }
+
+        .sec-body strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* TWO COL */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .col-stack {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tech-row {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tech-row:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .tr-tag {
+            font-size: 12px;
+            color: var(--teal);
+            letter-spacing: 0.04em;
+            margin-bottom: 8px;
+        }
+
+        .tr-head {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .tr-body {
+            font-size: 15px;
+            font-weight: 300;
+            color: var(--sub);
+            line-height: 1.75;
+        }
+
+        /* WIN */
+        .win-statement {
+            font-size: clamp(24px, 2.8vw, 38px);
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        .win-statement em {
+            font-style: italic;
+            color: var(--teal);
+            font-weight: 400;
+        }
+
+        .win-body {
+            font-size: 17px;
+            font-weight: 300;
+            color: var(--sub);
+            line-height: 1.8;
+        }
+
+        .win-body strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .win-points {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .win-pt {
+            display: grid;
+            grid-template-columns: 28px 1fr;
+            gap: 16px;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .win-pt:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .wp-n {
+            font-size: 11px;
+            color: var(--dim);
+            padding-top: 3px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .wp-t {
+            font-size: 15px;
+            font-weight: 300;
+            color: var(--sub);
+            line-height: 1.75;
+        }
+
+        .wp-t strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* RAISE TABLE */
+        .raise-table {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rt-row {
+            display: grid;
+            grid-template-columns: 140px 1fr auto;
+            gap: 24px;
+            align-items: start;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .rt-row:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .rt-period {
+            font-size: 11px;
+            color: var(--dim);
+            padding-top: 3px;
+            letter-spacing: 0.04em;
+        }
+
+        .rt-milestone {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .rt-explain {
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--sub);
+            line-height: 1.7;
+        }
+
+        .rt-val {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--teal);
+            white-space: nowrap;
+            text-align: right;
+            padding-top: 3px;
+        }
+
+        .rt-val.amber {
+            color: var(--amber);
+        }
+
+        /* RAISE CARD */
+        .raise-card {
+            background: var(--bg1);
+            border: 1px solid var(--border);
+            border-top: 2px solid var(--teal);
+        }
+
+        .rc-head {
+            padding: 28px 28px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .rc-round {
+            font-size: 11px;
+            color: var(--teal);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .rc-amt {
+            font-size: 64px;
+            font-weight: 600;
+            color: var(--teal);
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .rc-terms {
+            font-size: 12px;
+            color: var(--dim);
+        }
+
+        .rc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 28px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .rcl {
+            font-size: 13px;
+            color: var(--sub);
+        }
+
+        .rcv {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .rcv.t {
+            color: var(--teal);
+        }
+
+        .rcv.a {
+            color: var(--amber);
+        }
+
+        .rc-contact {
+            padding: 20px 28px;
+        }
+
+        .rc-contact-label {
+            font-size: 11px;
+            color: var(--dim);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .rc-contact a {
+            display: block;
+            font-size: 13px;
+            color: var(--text);
+            text-decoration: none;
+            margin-bottom: 6px;
+            transition: color 0.15s;
+        }
+
+        .rc-contact a:hover {
+            color: var(--teal);
+        }
+
+        /* TEAM */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .tc {
+            background: var(--bg);
+            padding: 44px;
+        }
+
+        .tc-name {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+
+        .tc-role {
+            font-size: 12px;
+            color: var(--teal);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .tc-email {
+            font-size: 13px;
+            color: var(--dim);
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tc-email a {
+            color: var(--sub);
+            text-decoration: none;
+        }
+
+        .tc-bio {
+            font-size: 15px;
+            font-weight: 300;
+            color: var(--sub);
+            line-height: 1.75;
+        }
+
+        .tc-bio strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* CTA */
+        .cta-band {
+            background: var(--teal);
+            padding: 72px 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .cta-h {
+            font-size: clamp(26px, 3vw, 40px);
+            font-weight: 600;
+            color: #0A0A0A;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        .cta-sub {
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.5);
+            font-weight: 300;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .btn-dark {
+            font-size: 14px;
+            font-weight: 500;
+            background: #0A0A0A;
+            color: var(--teal);
+            padding: 12px 24px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-dark:hover {
+            opacity: 0.85;
+        }
+
+        .btn-plain {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.55);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+            padding-bottom: 1px;
+            white-space: nowrap;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 28px 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .f-logo {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .f-logo-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--teal);
+        }
+
+        .f-logo-sub {
+            font-size: 12px;
+            color: var(--dim);
+        }
+
+        .f-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .f-links a {
+            font-size: 12px;
+            color: var(--dim);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .f-links a:hover {
+            color: var(--teal);
+        }
+
+        .f-note {
+            font-size: 11px;
+            color: var(--dim);
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media(max-width:900px) {
+            nav {
+                padding: 0 24px;
+            }
+
+            .hero-section,
+            .sec {
+                padding: 72px 24px 56px;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .rt-row {
+                grid-template-columns: 1fr auto;
+                grid-template-rows: auto auto;
+            }
+
+            .rt-period {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .rt-content {
+                grid-column: span 2;
+                grid-row: 2;
+            }
+
+            .rt-val {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-band {
+                flex-direction: column;
+                padding: 48px 24px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 16px;
+                padding: 24px;
+                text-align: center;
+            }
+
+            .f-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">
+            <span class="nav-logo-name">Supernova</span>
+            <span class="nav-logo-sub">Log-Tech</span>
+        </div>
+        <div class="nav-right">
+            <span class="nav-conf">Confidential</span>
+            <a class="nav-dl" href="https://angel.supernova.center/SN_deck.pdf" target="_blank">Download deck ↓</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section
+        style="min-height:100vh;display:grid;grid-template-columns:1fr 480px;gap:80px;align-items:center;padding:140px 64px 100px;border-bottom:1px solid var(--border);">
+
+        <!-- LEFT -->
+        <div>
+            <div class="hero-eyebrow">Pre-seed investment round · 2026</div>
+            <h1>
+                $500K to unlock<br>
+                <em>$1M ARR</em><br>
+                <span class="dim">in 2026.</span>
+            </h1>
+            <p class="hero-subtitle">
+                500,000 U.S. OTR carriers operate without a real back office. <strong>Supernova is building it for
+                    them</strong> — as a software-powered operation from day one.<br><br>
+                We are already live, generating revenue, and onboarding carriers. The bottleneck is not demand. It is
+                dispatcher capacity. This round removes it.
+            </p>
+            <div class="hero-cta">
+                <a class="btn-primary" href="https://angel.supernova.center/SN_deck.pdf" target="_blank">
+                    <svg width="13" height="13" viewBox="0 0 12 12" fill="none">
+                        <path d="M6 1v8M3 7l3 2 3-2M1 11h10" stroke="#0A0A0A" stroke-width="1.5"
+                            stroke-linecap="round" />
+                    </svg>
+                    View investor deck
+                </a>
+                <a class="btn-ghost"
+                    href="/cdn-cgi/l/email-protection#48252120292124083b3d382d3a26273e29662b2d263c2d3a">Speak with the
+                    founders</a>
+            </div>
+        </div>
+
+        <!-- RIGHT — traction card -->
+        <div
+            style="background:var(--bg1);border:1px solid var(--border);border-top:2px solid var(--teal);display:flex;flex-direction:column;">
+
+            <!-- Header -->
+            <div style="padding:20px 28px 14px;border-bottom:1px solid var(--border);">
+                <div
+                    style="font-size:11px;letter-spacing:0.14em;color:var(--teal);text-transform:uppercase;margin-bottom:3px;">
+                    Traction</div>
+                <div style="font-size:15px;color:#ccc;font-weight:300;">Apr 2025 → now</div>
+            </div>
+
+            <!-- MRR Chart -->
+            <div style="padding:18px 28px 14px;border-bottom:1px solid var(--border);">
+                <div style="font-size:13px;color:#aaa;margin-bottom:10px;">Monthly recurring revenue</div>
+                <canvas id="mrrChart" style="width:100%;height:110px;display:block;"></canvas>
+                <div style="display:flex;justify-content:space-between;margin-top:8px;">
+                    <div style="font-size:11px;color:#666;">Apr '25</div>
+                    <div style="font-size:11px;color:var(--teal);font-weight:600;">Mar '26</div>
+                    <div style="font-size:11px;color:#00C896;">Apr '26 ↑</div>
+                    <div style="font-size:11px;color:#E07A00;">+ pipeline →</div>
+                </div>
+            </div>
+
+            <!-- Progress bar -->
+            <div style="padding:16px 28px;border-bottom:1px solid var(--border);background:rgba(0,200,150,0.03);">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
+                    <div style="font-size:13px;color:#bbb;">Progress to 100 truck milestone</div>
+                    <div style="font-size:14px;color:var(--teal);font-weight:600;">40 / 100</div>
+                </div>
+                <div style="height:7px;background:rgba(255,255,255,0.06);position:relative;">
+                    <div style="position:absolute;left:0;top:0;height:100%;width:40%;background:var(--teal);"></div>
+                    <div
+                        style="position:absolute;left:40%;top:0;height:100%;width:20%;background:rgba(224,122,0,0.55);">
+                    </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;margin-top:7px;">
+                    <div style="font-size:12px;color:var(--teal);">40% onboarded</div>
+                    <div style="font-size:12px;color:#E07A00;">+20% in pipeline</div>
+                    <div style="font-size:12px;color:#555;">100 = $1M ARR</div>
+                </div>
+                <div style="font-size:12px;color:#777;margin-top:7px;line-height:1.55;">On track — accounting for
+                    expected 12–15% churn, we are tracking to deliver 100 trucks within this raise.</div>
+            </div>
+
+            <!-- ACT 1 -->
+            <div style="padding:16px 28px;border-bottom:1px solid var(--border);">
+                <div style="font-size:11px;letter-spacing:0.1em;color:#666;text-transform:uppercase;margin-bottom:8px;">
+                    Apr 2025 – Mar 2026 · 12 months</div>
+                <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;">
+                    <div style="font-size:15px;color:#ccc;font-weight:300;line-height:1.55;">18 trucks · steady ops ·
+                        proof of model<br><span style="font-size:13px;color:#999;">$2.3M GTV · $70.2K revenue</span>
+                    </div>
+                    <div style="text-align:right;flex-shrink:0;">
+                        <div style="font-size:11px;color:#666;margin-bottom:2px;">avg MRR</div>
+                        <div
+                            style="font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:#aaa;">
+                            ~$7K</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACT 2 — April inflection -->
+            <div style="padding:16px 28px;border-bottom:1px solid var(--border);background:rgba(0,200,150,0.04);">
+                <div
+                    style="font-size:11px;letter-spacing:0.1em;color:var(--teal);text-transform:uppercase;margin-bottom:8px;">
+                    April 2026 · inflection point</div>
+                <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;">
+                    <div style="font-size:15px;color:#ddd;font-weight:300;line-height:1.55;">22 trucks onboarded · total
+                        40 trucks<br><span style="font-size:13px;color:#aaa;">MRR running at $29–35K</span></div>
+                    <div style="text-align:right;flex-shrink:0;">
+                        <div style="font-size:11px;color:#666;margin-bottom:2px;">projected ARR</div>
+                        <div
+                            style="font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:var(--teal);">
+                            $350–400K</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACT 3 — pipeline -->
+            <div style="padding:16px 28px;border-bottom:1px solid var(--border);background:rgba(224,122,0,0.04);">
+                <div
+                    style="font-size:11px;letter-spacing:0.1em;color:#E07A00;text-transform:uppercase;margin-bottom:8px;">
+                    Next · blocked by dispatcher capacity</div>
+                <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;">
+                    <div style="font-size:15px;color:#ddd;font-weight:300;line-height:1.55;">20+ trucks waiting to
+                        onboard<br><span style="font-size:13px;color:#aaa;">Demand confirmed. Hiring now.</span></div>
+                    <div style="text-align:right;flex-shrink:0;">
+                        <div style="font-size:11px;color:#666;margin-bottom:2px;">in pipeline</div>
+                        <div
+                            style="font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:#E07A00;">
+                            20+</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom note -->
+            <div style="padding:16px 28px;">
+                <div style="font-size:14px;color:#bbb;line-height:1.65;font-weight:300;">The bottleneck is not demand,
+                    not product, not market. <strong style="color:#fff;font-weight:500;">This raise removes it.</strong>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        (function () {
+            const c = document.getElementById('mrrChart');
+            if (!c) return;
+            const dpr = window.devicePixelRatio || 1;
+            const W = c.offsetWidth; const H = 110;
+            c.width = W * dpr; c.height = H * dpr;
+            c.style.width = W + 'px'; c.style.height = H + 'px';
+            const ctx = c.getContext('2d');
+            ctx.scale(dpr, dpr);
+
+            // Apr'25→Mar'26 (12 bars), then 2 April bars side by side (no gap)
+            const hist = [3, 4, 4, 5, 6, 7, 7, 8, 8, 9, 10, 11];
+            const aprCurrent = 32;
+            const aprPipeline = 52;
+
+            const total = hist.length + 2; // 12 hist + 2 april bars
+            const max = 62;
+            const pad = { l: 2, r: 2, t: 18, b: 2 };
+            const bw = (W - pad.l - pad.r) / total;
+            const aprilBw = bw * 0.48; // each April bar is half-width to fit side by side
+
+            // Trend line through hist bars
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(0,200,150,0.18)';
+            ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
+            hist.forEach((v, i) => {
+                const x = pad.l + (i + 0.5) * bw;
+                const y = H - pad.b - (v / max) * (H - pad.t - pad.b);
+                i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            });
+            ctx.stroke(); ctx.setLineDash([]);
+
+            // Hist bars
+            hist.forEach((v, i) => {
+                const x = pad.l + i * bw;
+                const bh = (v / max) * (H - pad.t - pad.b);
+                const y = H - pad.b - bh;
+                const bright = 0.12 + (i / hist.length) * 0.18;
+                ctx.fillStyle = `rgba(0,200,150,${bright})`;
+                ctx.fillRect(x + 1.5, y, bw - 3, bh);
+            });
+
+            // April current (teal solid) — left half of April slot
+            const ax = pad.l + hist.length * bw;
+            const abh = (aprCurrent / max) * (H - pad.t - pad.b);
+            const ay = H - pad.b - abh;
+            ctx.fillStyle = 'rgba(0,200,150,0.75)';
+            ctx.fillRect(ax + 1, ay, aprilBw - 1, abh);
+            ctx.fillStyle = '#00C896';
+            ctx.font = `bold 10px sans-serif`; ctx.textAlign = 'center';
+            ctx.fillText('$32K', ax + aprilBw / 2, ay - 4);
+
+            // April pipeline (amber dashed) — right half of April slot
+            const px = ax + aprilBw + 1;
+            const pbh = (aprPipeline / max) * (H - pad.t - pad.b);
+            const py = H - pad.b - pbh;
+            ctx.setLineDash([3, 3]);
+            ctx.strokeStyle = 'rgba(224,122,0,0.7)'; ctx.lineWidth = 1.5;
+            ctx.strokeRect(px, py, aprilBw - 1, pbh);
+            ctx.fillStyle = 'rgba(224,122,0,0.12)';
+            ctx.fillRect(px, py, aprilBw - 1, pbh);
+            ctx.setLineDash([]);
+            ctx.fillStyle = '#E07A00';
+            ctx.font = `bold 10px sans-serif`; ctx.textAlign = 'center';
+            ctx.fillText('$52K+', px + aprilBw / 2, py - 4);
+        })();
+    </script>
+
+    <!-- NOT A SERVICE COMPANY -->
+    <section class="sec reveal">
+        <div class="sec-label">Not a service company</div>
+        <div class="two-col">
+            <div>
+                <h2>Service on the surface.<br><em>Software underneath.</em></h2>
+                <p style="font-size:17px;color:var(--text);font-weight:500;margin-bottom:20px;line-height:1.5;">The
+                    carrier sees an operation. We are building a platform.</p>
+                <p class="sec-body" style="margin-bottom:0;">
+                    To the carrier, Supernova is a back office that just runs. No setup. No adoption. No change.<br><br>
+                    What is actually happening is different. Every step of that operation runs through software
+                    Supernova builds and owns. Service delivery is the distribution. The software is the
+                    business.<br><br>
+                    Service companies scale with headcount. Supernova scales with data.
+                </p>
+            </div>
+
+            <!-- Block scheme -->
+            <div>
+                <!-- Header row -->
+                <div style="display:grid;grid-template-columns:1fr 28px 1fr;gap:0;margin-bottom:0;">
+                    <div
+                        style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sub);padding:12px 16px;background:rgba(255,255,255,0.03);text-align:center;">
+                        What the carrier sees</div>
+                    <div></div>
+                    <div
+                        style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);padding:12px 16px;background:rgba(0,200,150,0.06);text-align:center;">
+                        What is actually being built</div>
+                </div>
+
+                <!-- Rows -->
+                <div id="schemeRows"></div>
+
+                <!-- Bottom bridge -->
+                <div
+                    style="margin-top:24px;padding:16px 20px;border:1px solid rgba(0,200,150,0.2);background:rgba(0,200,150,0.04);">
+                    <div style="font-size:14px;color:var(--sub);line-height:1.6;">The service is the distribution.
+                        <strong style="color:var(--text);">The software is the business.</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            const rows = [
+                ['Dispatcher makes a call', 'Decision captured + scored'],
+                ['Load gets booked', 'Lane data recorded'],
+                ['Compliance handled', 'Carrier pattern learned'],
+                ['Invoice sent', 'Cash flow intelligence built'],
+                ['Carrier scales', 'Cost per carrier drops'],
+            ];
+            const arrows = ['', '', '', '', '→ Workflow proven at revenue'];
+            let html = '';
+            rows.forEach((r, i) => {
+                const isLast = i === rows.length - 1;
+                html += `<div style="display:grid;grid-template-columns:1fr 28px 1fr;align-items:center;border-top:1px solid rgba(255,255,255,0.05);">
+      <div style="padding:11px 16px;font-size:14px;color:${isLast ? '#aaa' : '#777'};font-weight:300;">${r[0]}</div>
+      <div style="text-align:center;color:rgba(0,200,150,0.4);font-size:14px;">→</div>
+      <div style="padding:11px 16px;font-size:14px;color:${isLast ? 'var(--teal)' : '#bbb'};font-weight:${isLast ? '500' : '300'};">${r[1]}</div>
+    </div>`;
+            });
+            // Automation chain
+            html += `<div style="border-top:1px solid rgba(255,255,255,0.05);padding:8px 16px 0;display:flex;flex-direction:column;gap:0;">`;
+            ['Workflow proven at revenue', 'Automation layer deployed', 'Cost per carrier drops', 'Margin expands without headcount'].forEach((s, i) => {
+                html += `<div style="display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);">
+      <span style="color:rgba(0,200,150,0.5);font-size:12px;">↓</span>
+      <span style="font-size:13px;color:${i === 3 ? 'var(--teal)' : '#999'};font-weight:${i === 3 ? '500' : '300'};">${s}</span>
+    </div>`;
+            });
+            html += `</div>`;
+            document.getElementById('schemeRows').innerHTML = html;
+        })();
+    </script>
+
+    <!-- WHY WE WIN -->
+    <section class="sec reveal">
+        <div class="sec-label">Why we win</div>
+        <div class="two-col">
+            <div class="win-left">
+                <div class="win-statement">While others wait for adoption.<br><em>Supernova is already at the
+                        Epicenter.</em></div>
+                <p class="win-body">
+                    Trucking carriers need a back office to survive. They cannot build one themselves. Software tools
+                    require behavior change — they won't. Human dispatchers are expensive, don't scale, and don't
+                    compound.<br><br>
+                    Supernova doesn't require the carrier to change anything. It just runs. And because it runs, it
+                    learns. Because it learns, it improves. Because it improves, it compounds.<br><br>
+                    The <span style="color:var(--teal);font-weight:500;">network effect</span> is invisible to the
+                    carrier but structurally irreversible. The longer they stay, the more they depend on what Supernova
+                    built around them. Leaving doesn't mean cancelling a service — it means losing infrastructure they
+                    cannot rebuild alone.
+                </p>
+                <div style="margin-top:28px;padding-top:28px;border-top:1px solid var(--border);">
+                    <div style="font-size:16px;font-weight:500;color:var(--text);line-height:1.6;">Supernova is the
+                        operation.<br>Supernova is there when trucking happens.<br>Supernova is the software and the
+                        back office. Simultaneously.</div>
+                </div>
+            </div>
+            <div class="win-points">
+                <div
+                    style="font-size:16px;font-weight:400;color:var(--sub);line-height:1.75;padding-bottom:24px;border-bottom:1px solid var(--border);">
+                    Supernova wins because it is solving a paradox that does not resolve from the outside.
+                </div>
+                <div
+                    style="padding:20px 24px;margin:0 0 0 0;border-left:2px solid var(--teal);background:rgba(0,200,150,0.06);border-bottom:1px solid var(--border);">
+                    <div style="font-size:16px;color:var(--text);line-height:1.75;font-weight:300;">Software needs
+                        adoption. Operations need execution. Supernova skips adoption — it becomes the operation. The
+                        carrier never installs anything. Supernova is already running.</div>
+                </div>
+                <div style="padding:24px 0;border-bottom:1px solid var(--border);">
+                    <div
+                        style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sub);margin-bottom:16px;">
+                        The result is three things that compound and cannot be replicated from the outside</div>
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                        <div style="display:flex;gap:16px;align-items:baseline;">
+                            <span style="font-size:14px;font-weight:600;color:var(--teal);min-width:70px;">Trust</span>
+                            <span style="font-size:15px;color:var(--sub);font-weight:300;">Earned through operational
+                                accountability, not marketing.</span>
+                        </div>
+                        <div style="display:flex;gap:16px;align-items:baseline;">
+                            <span style="font-size:14px;font-weight:600;color:var(--teal);min-width:70px;">Data</span>
+                            <span style="font-size:15px;color:var(--sub);font-weight:300;">Generated through execution,
+                                not observation.</span>
+                        </div>
+                        <div style="display:flex;gap:16px;align-items:baseline;">
+                            <span
+                                style="font-size:14px;font-weight:600;color:var(--teal);min-width:70px;">Network</span>
+                            <span style="font-size:15px;color:var(--sub);font-weight:300;">Every carrier makes every
+                                other carrier stronger.</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:24px 0;border-bottom:1px solid var(--border);">
+                    <div style="font-size:15px;color:var(--sub);line-height:1.75;font-weight:300;">
+                        These three things are not just what makes Supernova defensible today. They are exactly what AI
+                        needs to automate the trucking back office tomorrow — knowledge of how trucking actually behaves
+                        under pressure. That knowledge only exists inside a running operation.
+                    </div>
+                </div>
+                <div style="padding:24px 0;">
+                    <div style="font-size:16px;font-weight:500;color:var(--text);line-height:1.6;">That is not a
+                        feature. That is a structural position.<br>And structural positions, once held, are very
+                        difficult to displace.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE RAISE -->
+    <section class="sec reveal">
+        <div class="sec-label">The raise</div>
+        <div class="two-col">
+            <div class="raise-left">
+                <div class="sec-h2">Closing our<br><em>pre-seed now.</em></div>
+                <p class="sec-body">82 trucks needed to reach $1M ARR. Current acquisition rate: 2 trucks per week. The
+                    only constraint is dispatcher capacity — not demand, not product, not market. This raise removes it.
+                </p>
+                <div class="raise-table">
+                    <div class="rt-row">
+                        <span class="rt-period">2026 · Now</span>
+                        <div class="rt-content">
+                            <div class="rt-milestone">100 trucks · $1M ARR</div>
+                            <div class="rt-explain">SAFE · $5M valuation cap. Capital deployed into dispatcher hiring
+                                and sales ops. Break-even at ~65 trucks. This milestone proves the unit model and
+                                unlocks the Seed round.</div>
+                        </div>
+                        <span class="rt-val">$500K</span>
+                    </div>
+                    <div class="rt-row">
+                        <span class="rt-period">2027 · Seed</span>
+                        <div class="rt-content">
+                            <div class="rt-milestone">250–350 trucks · $2.6–4.5M ARR</div>
+                            <div class="rt-explain">Priced round targeting Q1 2027. Scales the dispatcher pool and
+                                launches the full back-office stack — compliance, ELD, billing, after-hours. AI
+                                Co-Worker ① enters the operation.</div>
+                        </div>
+                        <span class="rt-val">$2M–$5M</span>
+                    </div>
+                    <div class="rt-row">
+                        <span class="rt-period">2028 · Series A</span>
+                        <div class="rt-content">
+                            <div class="rt-milestone">650–1,000+ trucks · $8–16M ARR</div>
+                            <div class="rt-explain">Full back-office stack at scale. AI Co-Worker ② takes over
+                                execution. Human team manages exceptions. Cost structure flattens as revenue compounds.
+                                The infrastructure is fully autonomous.</div>
+                        </div>
+                        <span class="rt-val">$10M–$20M</span>
+                    </div>
+                    <div class="rt-row">
+                        <span class="rt-period">Pre-seed return</span>
+                        <div class="rt-content">
+                            <div class="rt-milestone">At $5M cap · Series A exit</div>
+                            <div class="rt-explain">At 7–10× revenue on a $70M–$160M exit. Pre-seed investors entering
+                                at $5M cap achieve 14–32× return. The $500K today is the earliest position in the cap
+                                table.</div>
+                        </div>
+                        <span class="rt-val amber">14–32×</span>
+                    </div>
+                </div>
+            </div>
+            <div class="raise-card">
+                <div class="rc-head">
+                    <div class="rc-round">Pre-seed round · Raising now</div>
+                    <div class="rc-amt">$500K</div>
+                    <div class="rc-terms">SAFE · $5M valuation cap</div>
+                </div>
+                <div class="rc-row"><span class="rcl">Instrument</span><span class="rcv">SAFE note</span></div>
+                <div class="rc-row"><span class="rcl">Valuation cap</span><span class="rcv">$5M</span></div>
+                <div class="rc-row"><span class="rcl">Target close</span><span class="rcv">Q2 2026</span></div>
+                <div class="rc-row"><span class="rcl">Use of funds</span><span class="rcv">Dispatchers + sales</span>
+                </div>
+                <div class="rc-row"><span class="rcl">Milestone</span><span class="rcv t">100 trucks · $1M ARR</span>
+                </div>
+                <div class="rc-row"><span class="rcl">Break-even</span><span class="rcv t">~65 trucks</span></div>
+                <div class="rc-row"><span class="rcl">Seed round</span><span class="rcv">$2M–$5M · Q1 2027</span></div>
+                <div class="rc-row" style="border-bottom:1px solid var(--border)"><span class="rcl">Pre-seed
+                        return</span><span class="rcv a">14–32× at Series A</span></div>
+                <div class="rc-contact">
+                    <div class="rc-contact-label">Contact the founders</div>
+                    <a href="/cdn-cgi/l/email-protection#7d1014151c14113d0e080d180f13120b1c531e181309180f"><span
+                            class="__cf_email__"
+                            data-cfemail="234e4a4b424a4f6350565346514d4c55420d40464d574651">[email&#160;protected]</span></a>
+                    <a href="/cdn-cgi/l/email-protection#b0c2dfd2d5c2c4f0c3c5c0d5c2dedfc6d19ed3d5dec4d5c2"><span
+                            class="__cf_email__"
+                            data-cfemail="21534e434453556152545144534f4e57400f42444f554453">[email&#160;protected]</span></a>
+                    <a href="https://supernova.center" target="_blank">supernova.center</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="sec reveal">
+        <div class="sec-label">The team</div>
+        <div class="team-grid">
+            <div class="tc">
+                <div class="tc-name">Mihail Cernei</div>
+                <div class="tc-role">CEO & Co-Founder</div>
+                <div class="tc-email"><a
+                        href="/cdn-cgi/l/email-protection#b7dadedfd6dedbf7c4c2c7d2c5d9d8c1d699d4d2d9c3d2c5"><span
+                            class="__cf_email__"
+                            data-cfemail="59343031383035192a2c293c2b37362f38773a3c372d3c2b">[email&#160;protected]</span></a>
+                </div>
+                <p class="tc-bio">10+ years building freight platforms across the US and Europe. Built <strong>Qoobus —
+                        40,000+ carriers and shippers onboarded.</strong> Raised institutional capital, scaled
+                    multi-country operations in highly fragmented logistics markets. Has watched thousands of carriers
+                    collapse under back-office weight. Supernova is built on that pattern recognition — not theory.</p>
+            </div>
+            <div class="tc">
+                <div class="tc-name">Robert Nürnberger</div>
+                <div class="tc-role">CFO & Co-Founder</div>
+                <div class="tc-email"><a
+                        href="/cdn-cgi/l/email-protection#6e1c010c0b1c1a2e1d1b1e0b1c0001180f400d0b001a0b1c"><span
+                            class="__cf_email__"
+                            data-cfemail="6a1805080f181e2a191f1a0f1804051c0b44090f041e0f18">[email&#160;protected]</span></a>
+                </div>
+                <p class="tc-bio">20+ years scaling finance and operations across startups, PE-backed businesses, and
+                    listed corporations. <strong>CFO at Eurowag and UTA</strong> — leading fleet card issuers in Europe
+                    managing hundreds of thousands of commercial vehicles. Brings the financial infrastructure
+                    discipline that turns an operations business into a platform business.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-band reveal">
+        <div>
+            <div class="cta-h">We are closing our<br>$500K pre-seed now.</div>
+            <div class="cta-sub">Download the full deck or reach out directly to the founders.</div>
+        </div>
+        <div class="cta-actions">
+            <a class="btn-dark" href="https://angel.supernova.center/SN_deck.pdf" target="_blank">
+                <svg width="13" height="13" viewBox="0 0 12 12" fill="none">
+                    <path d="M6 1v8M3 7l3 2 3-2M1 11h10" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                Download the deck
+            </a>
+            <a class="btn-plain"
+                href="/cdn-cgi/l/email-protection#670a0e0f060e0b2714121702150908110649040209130215">Talk to us</a>
+        </div>
+        << /div>
+    </div>
+
+    <footer>
+        <div class="f-logo">
+            <span class="f-logo-name">Supernova</span>
+            <span class="f-logo-sub">Log-Tech</span>
+        </div>
+        <div class="f-links">
+            <a href="/cdn-cgi/l/email-protection#94f9fdfcf5fdf8d4e7e1e4f1e6fafbe2f5baf7f1fae0f1e6"><span
+                    class="__cf_email__"
+                    data-cfemail="98f5f1f0f9f1f4d8ebede8fdeaf6f7eef9b6fbfdf6ecfdea">[email&#160;protected]</span></a>
+            <a href="https://supernova.center" target="_blank">supernova.center</a>
+            <a href="https://superload.app" target="_blank">superload.app</a>
+        </div>
+        <div class="f-note">© 2026 Supernova Log-Tech · Confidential</div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode
