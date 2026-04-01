@@ -32,7 +32,7 @@ export default function Navbar({ variant = 'main' }: NavbarProps) {
   }
 
   return (
-    <header className="flex justify-between items-center py-8 px-6 md:px-16 max-w-[1600px] mx-auto border-b border-supernova-grid-line">
+    <header className="flex justify-between items-center py-8 px-6 md:px-12 container mx-auto border-b border-supernova-grid-line">
       <div className="logo">
         <Link href="/">
           <Image

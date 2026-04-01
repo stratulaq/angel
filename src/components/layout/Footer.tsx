@@ -8,22 +8,18 @@ export default function Footer({ variant = 'main' }: FooterProps) {
   if (variant === 'investor') {
     return (
       <footer className="py-10 md:py-8 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-5 border-t border-supernova-border">
-        <div className="flex items-baseline gap-2">
-          <span className="font-condensed text-sm font-bold tracking-tight text-supernova-teal uppercase">SUPERNOVA</span>
-          <span className="font-mono text-[9px] text-supernova-muted tracking-widest uppercase">LOG-TECH</span>
-        </div>
+        <div className="font-mono text-sm text-supernova-mid uppercase">© 2026 Supernova Log-Tech · Confidential</div>
         <div className="flex gap-6">
-          <Link href="mailto:mihail@supernova.center" className="font-mono text-[10px] text-supernova-muted no-underline hover:text-supernova-teal transition-colors">
+          <Link href="mailto:mihail@supernova.center" className="font-mono text-sm text-supernova-mid no-underline hover:text-supernova-teal transition-colors">
             mihail@supernova.center
           </Link>
-          <Link href="https://supernova.center" target="_blank" className="font-mono text-[10px] text-supernova-muted no-underline hover:text-supernova-teal transition-colors">
+          <Link href="https://supernova.center" target="_blank" className="font-mono text-sm text-supernova-mid no-underline hover:text-supernova-teal transition-colors">
             supernova.center
           </Link>
-          <Link href="https://superload.app" target="_blank" className="font-mono text-[10px] text-supernova-muted no-underline hover:text-supernova-teal transition-colors">
+          <Link href="https://superload.app" target="_blank" className="font-mono text-sm text-supernova-mid no-underline hover:text-supernova-teal transition-colors">
             superload.app
           </Link>
         </div>
-        <div className="font-mono text-[10px] text-supernova-muted uppercase">© 2026 Supernova Log-Tech · Confidential</div>
       </footer>
     );
   }
