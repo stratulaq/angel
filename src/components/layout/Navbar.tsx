@@ -34,7 +34,7 @@ export default function Navbar({ variant = 'main' }: NavbarProps) {
   return (
     <header className="flex justify-between items-center py-8 px-6 md:px-12 container mx-auto border-b border-supernova-grid-line">
       <div className="logo">
-        <Link href="/">
+        <Link href="https://supernova.center">
           <Image
             src="/supernova_full_logo.png"
             alt="SUPERNOVA Logo"
@@ -45,8 +45,8 @@ export default function Navbar({ variant = 'main' }: NavbarProps) {
         </Link>
       </div>
       <nav className="font-mono text-xs tracking-superwide uppercase text-supernova-text-muted flex gap-8">
-        <Link href="#relations" className="transition-colors duration-300 hover:text-supernova-primary">Partner Relations</Link>
-        <Link href="#confidential" className="transition-colors duration-300 hover:text-supernova-primary">Protocol [V.4]</Link>
+        <Link href="mailto:mihail@supernova.center" className="transition-colors duration-300 hover:text-supernova-primary">mihail@supernova.center</Link>
+        {/* <Link href="#confidential" className="transition-colors duration-300 hover:text-supernova-primary">Protocol [V.4]</Link> */}
       </nav>
     </header>
   );

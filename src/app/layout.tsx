@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Mulish, Barlow_Condensed, IBM_Plex_Mono } from "next/font/google";
+import { Barlow, Barlow_Condensed, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const mulish = Mulish({
-  variable: "--font-mulish",
+const barlow = Barlow({
+  variable: "--font-barlow",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${mulish.variable} ${barlowCondensed.variable} ${monoFont.variable}`}>
+    <html lang="en" className={`scroll-smooth ${barlow.variable} ${barlowCondensed.variable} ${monoFont.variable}`}>
       <body className="antialiased">
         <div className="background-glow"></div>
         {children}

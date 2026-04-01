@@ -1,28 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-supernova-teal: #00C896;
+  --color-supernova-teal: #34d399;
   --color-supernova-primary: #34D399;
   --color-supernova-amber: #E07A00;
   --color-supernova-bg: #0A0A0A;
   --color-supernova-bg1: #0F0F0F;
   --color-supernova-bg2: #141414;
   --color-supernova-bg-main: #070908;
-  --color-supernova-text: #FFFFFF;
+  --color-supernova-text: #DBE8DC;
   --color-supernova-text-main: #DBE8DC;
   --color-supernova-text-muted: #B0C1B1;
   --color-supernova-muted: #777777;
-  --color-supernova-mid: #888888;
+  --color-supernova-mid: #9FB8A0;
   --color-supernova-border: rgba(255, 255, 255, 0.06);
   --color-supernova-grid-line: rgba(255, 255, 255, 0.04);
   --color-supernova-primary-glow: rgba(52, 211, 153, 0.15);
 
-  --font-sans: var(--font-mulish), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-barlow), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-condensed: var(--font-barlow-condensed), sans-serif;
   --font-mono: var(--font-ibm-plex-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --tracking-superwide: 0.2em;
   --tracking-wide: 0.12em;
+
 }
 
 :root {
