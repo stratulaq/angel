@@ -36,7 +36,7 @@
     background-color: var(--background);
     color: var(--foreground);
     min-height: 100vh;
-    font-family: var(--font-mulish), var(--font-sans), sans-serif;
+    font-family: var(--font-barlow), var(--font-sans), sans-serif;
     @apply antialiased overflow-x-hidden;
     background-image:
       linear-gradient(var(--color-supernova-grid-line) 1px, transparent 1px),
