@@ -29,11 +29,11 @@ export default function TractionChart() {
 
       // Data (includes previous growth adjustments)
       const hist = [3, 5, 8, 12, 17, 22, 9, 11, 14, 17, 21, 26];
-      const aprCurrent = 32;
-      const aprPipeline = 52;
+      const aprCurrent = 42;
+      const aprPipeline = 68;
 
       const total = hist.length + 2;
-      const max = 62;
+      const max = 74;
       const pad = { l: 2, r: 2, t: 18, b: 2 };
       const bw = (W - pad.l - pad.r) / total;
       const aprilBw = bw * 0.48;
