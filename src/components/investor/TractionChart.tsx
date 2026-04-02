@@ -23,27 +23,27 @@ export default function TractionChart() {
       c.height = H * dpr;
       c.style.width = W + 'px';
       c.style.height = H + 'px';
-      
+
       ctx.resetTransform(); // Reset any previous scale
       ctx.scale(dpr, dpr);
 
       // Data (includes previous growth adjustments)
-      const hist = [3, 4, 4, 5, 6, 7, 7, 9, 12, 16, 21, 27];
+      const hist = [3, 5, 8, 12, 17, 22, 9, 11, 14, 17, 21, 26];
       const aprCurrent = 32;
       const aprPipeline = 52;
 
-      const total = hist.length + 2; 
+      const total = hist.length + 2;
       const max = 62;
       const pad = { l: 2, r: 2, t: 18, b: 2 };
       const bw = (W - pad.l - pad.r) / total;
-      const aprilBw = bw * 0.48; 
+      const aprilBw = bw * 0.48;
 
       // Clear
       ctx.clearRect(0, 0, W, H);
 
       // Trend line
       ctx.beginPath();
-      ctx.strokeStyle = 'rgba(52, 211, 153, 0.18)'; 
+      ctx.strokeStyle = 'rgba(52, 211, 153, 0.18)';
       ctx.lineWidth = 1;
       ctx.setLineDash([3, 3]);
       hist.forEach((v, i) => {
@@ -59,8 +59,12 @@ export default function TractionChart() {
         const x = pad.l + i * bw;
         const bh = (v / max) * (H - pad.t - pad.b);
         const y = H - pad.b - bh;
-        const bright = 0.12 + (i / hist.length) * 0.18;
-        ctx.fillStyle = `rgba(52, 211, 153, ${bright})`;
+        if (i === 6) {
+          ctx.fillStyle = '#FF6B3550';
+        } else {
+          const bright = 0.12 + (i / hist.length) * 0.18;
+          ctx.fillStyle = `rgba(52, 211, 153, ${bright})`;
+        }
         ctx.fillRect(x + 1.5, y, bw - 3, bh);
       });
 
@@ -99,7 +103,7 @@ export default function TractionChart() {
     const observer = new ResizeObserver(() => {
       requestAnimationFrame(render);
     });
-    
+
     observer.observe(c);
 
     return () => observer.disconnect();

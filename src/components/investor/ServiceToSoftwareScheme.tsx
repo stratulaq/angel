@@ -71,8 +71,8 @@ export default function ServiceToSoftwareScheme() {
       </div>
 
       {/* Bottom Bridge Note */}
-      <div className="mt-8 p-4 border border-supernova-teal/20 bg-supernova-teal/5">
-        <div className="text-sm text-white/75 leading-relaxed">
+      <div className="mt-8 p-6 border border-supernova-teal/20 bg-supernova-teal/5">
+        <div className="text-xl text-white/75 leading-relaxed">
           The service is the distribution. <strong className="text-white font-medium">The software is the business.</strong>
         </div>
       </div>

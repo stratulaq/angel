@@ -22,7 +22,30 @@ const monoFont = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "SUPERNOVA | Investor Portal",
-  description: "Exclusive investor portal for SUPERNOVA. Access latest pitch decks.",
+  description: "Exclusive investor portal for SUPERNOVA. Access latest pitch deck.",
+  metadataBase: new URL('https://angel.supernova.center'),
+  openGraph: {
+    title: "SUPERNOVA | Investor Portal",
+    description: "Exclusive investor portal for SUPERNOVA. Access latest pitch deck.",
+    url: "https://angel.supernova.center",
+    siteName: "SUPERNOVA",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "SUPERNOVA Investor Portal",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SUPERNOVA | Investor Portal",
+    description: "Exclusive investor portal for SUPERNOVA. Access latest pitch deck.",
+    images: ["/og.png"],
+  },
   icons: {
     icon: [
       { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },

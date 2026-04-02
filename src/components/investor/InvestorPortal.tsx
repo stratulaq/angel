@@ -144,7 +144,7 @@ export default function InvestorPortal() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <div>
             <h2 className="font-condensed text-[clamp(36px,4vw,56px)] font-bold leading-[1.05] tracking-tight mb-5 uppercase">
-              Service on the surface.<br /><em className="font-condensed text-supernova-teal">Software underneath.</em>
+              Service on the surface.<br /><span className="font-condensed text-supernova-teal">Software underneath.</span>
             </h2>
             <p className="text-lg text-white/75 font-medium mb-3 leading-snug">The carrier sees an operation. We are building a platform.</p>
             <div className="text-lg font-light text-white/60 leading-relaxed">
@@ -165,10 +165,10 @@ export default function InvestorPortal() {
         <div className="text-sm text-supernova-teal tracking-widest uppercase mb-12 flex items-center gap-4 after:content-[''] after:flex-1 after:h-[1px] after:bg-white/7">
           Why we win
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end">
           <div>
             <h2 className="font-condensed text-[clamp(36px,4vw,56px)] font-bold leading-[1.1] tracking-tight mb-8 uppercase">
-              While others wait for adoption.<br /><em className="italic text-supernova-teal">Supernova is already at the Epicenter.</em>
+              While others wait for adoption.<br /><span className="font-condensed  text-supernova-teal">Supernova is already at the Epicenter.</span>
             </h2>
             <div className="text-lg font-light text-white/75 leading-relaxed mb-8">
               Trucking carriers need a back office to survive. <br />
@@ -198,7 +198,7 @@ export default function InvestorPortal() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-20 items-center">
           <div>
             <h2 className="font-condensed text-[clamp(36px,4vw,56px)] font-bold leading-[1.05] tracking-tight mb-5 uppercase">
-              Closing our<br /><em className="italic text-supernova-teal">pre-seed now.</em>
+              Closing our<br /><span className="font-condensed text-supernova-teal">pre-seed now.</span>
             </h2>
             <p className="text-lg font-light text-white/60 leading-relaxed mb-12">
               82 trucks needed to reach $1M ARR. Current acquisition rate: 2 trucks per week. The only constraint is dispatcher capacity — not demand, not product, not market. This raise removes it.
