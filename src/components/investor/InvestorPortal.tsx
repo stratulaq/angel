@@ -208,7 +208,7 @@ export default function InvestorPortal() {
                 { period: '2026 · Now', ms: '100 trucks · $1M ARR', ex: 'SAFE · $5M valuation cap. Capital deployed into dispatcher hiring and sales ops. Break-even at ~65 trucks. This milestone proves the unit model and unlocks the Seed round.', val: '$500K' },
                 { period: '2027 · Seed', ms: '250–350 trucks · $2.6–4.5M ARR', ex: 'Priced round targeting Q1 2027. Scales the dispatcher pool and launches the full back-office stack — compliance, ELD, billing, after-hours. AI Co-Worker ① enters the operation.', val: '$2M–$5M' },
                 { period: '2028 · Series A', ms: '650–1,000+ trucks · $8–16M ARR', ex: 'Full back-office stack at scale. AI Co-Worker ② takes over execution. Human team manages exceptions. Cost structure flattens as revenue compounds. The infrastructure is fully autonomous.', val: '$10M–$20M' },
-                { period: 'Pre-seed return', ms: 'At $5M cap · Series A exit', ex: 'At 7–10× revenue on a $70M–$160M exit. Pre-seed investors entering at $5M cap achieve 14–32× return. The $500K today is the earliest position in the cap table.', val: '14–32×', amber: true }
+                // { period: 'Pre-seed return', ms: 'At $5M cap · Series A exit', ex: 'At 7–10× revenue on a $70M–$160M exit. Pre-seed investors entering at $5M cap achieve 14–32× return. The $500K today is the earliest position in the cap table.', val: '14–32×', amber: true }
               ].map((row, idx) => (
                 <div key={idx} className={`grid grid-cols-1 md:grid-cols-[148px_1fr_auto] gap-7 py-8 px-4 border-b items-start transition-colors ${row.amber ? 'border-supernova-amber/40 border' : 'border-white/7'}`}>
                   <span className="font-mono text-xs text-white/50 tracking-widest uppercase">{row.period}</span>
@@ -235,7 +235,7 @@ export default function InvestorPortal() {
               { l: 'Milestone', v: '100 trucks · $1M ARR', t: true },
               { l: 'Break-even', v: '~65 trucks', t: true },
               { l: 'Seed round', v: '$2M–$5M · Q1 2027' },
-              { l: 'Pre-seed return', v: '14–32× at Series A', a: true }
+              // { l: 'Pre-seed return', v: '14–32× at Series A', a: true }
             ].map((row, idx) => (
               <div key={idx} className="flex justify-between items-center px-8 py-3.5 border-b border-white/7">
                 <span className="text-sm text-white/60 tracking-tight">{row.l}</span>
