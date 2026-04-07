@@ -210,13 +210,13 @@ export default function InvestorPortal() {
                 { period: '2028 · Series A', ms: '650–1,000+ trucks · $8–16M ARR', ex: 'Full back-office stack at scale. AI Co-Worker ② takes over execution. Human team manages exceptions. Cost structure flattens as revenue compounds. The infrastructure is fully autonomous.', val: '$10M–$20M' },
                 // { period: 'Pre-seed return', ms: 'At $5M cap · Series A exit', ex: 'At 7–10× revenue on a $70M–$160M exit. Pre-seed investors entering at $5M cap achieve 14–32× return. The $500K today is the earliest position in the cap table.', val: '14–32×', amber: true }
               ].map((row, idx) => (
-                <div key={idx} className={`grid grid-cols-1 md:grid-cols-[148px_1fr_auto] gap-7 py-8 px-4 border-b items-start transition-colors ${row.amber ? 'border-supernova-amber/40 border' : 'border-white/7'}`}>
+                <div key={idx} className={`grid grid-cols-1 md:grid-cols-[148px_1fr_auto] gap-7 py-8 px-4 border-b items-start transition-colors border-white/7`}>
                   <span className="font-mono text-xs text-white/50 tracking-widest uppercase">{row.period}</span>
                   <div>
                     <div className="text-lg font-semibold text-white mb-2 leading-tight">{row.ms}</div>
                     <div className=" font-light text-white/60 leading-relaxed">{row.ex}</div>
                   </div>
-                  <span className={`font-mono text-lg font-bold text-right pt-1 ${row.amber ? 'text-supernova-amber' : 'text-supernova-teal'}`}>{row.val}</span>
+                  <span className={`font-mono text-lg font-bold text-right pt-1 text-supernova-teal`}>{row.val}</span>
                 </div>
               ))}
             </div>
@@ -239,7 +239,7 @@ export default function InvestorPortal() {
             ].map((row, idx) => (
               <div key={idx} className="flex justify-between items-center px-8 py-3.5 border-b border-white/7">
                 <span className="text-sm text-white/60 tracking-tight">{row.l}</span>
-                <span className={`font-mono  font-medium ${row.t ? 'text-supernova-teal' : row.a ? 'text-supernova-amber' : 'text-white'}`}>{row.v}</span>
+                <span className={`font-mono  font-medium ${row.t ? 'text-supernova-teal' : 'text-white'}`}>{row.v}</span>
               </div>
             ))}
             <div className="p-8 pt-6">
