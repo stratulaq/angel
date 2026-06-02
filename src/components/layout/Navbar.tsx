@@ -22,7 +22,7 @@ export default function Navbar({ variant = 'main' }: NavbarProps) {
           <div className="flex items-center gap-4">
             <span className="text-sm tracking-wider hidden md:flex items-center font-mono text-supernova-text-muted "> Investor relations | Confidential</span>
             <Link
-              href="https://angel.supernova.center/SN_deck.pdf"
+              href="https://angel.supernova.center/SN_deck_may.pdf"
               target="_blank"
               className="text-sm tracking-wider bg-supernova-teal text-black font-semibold px-4 py-1 md:px-6 md:py-3 no-underline gap-2 flex items-center transition-opacity hover:opacity-85"
             >

@@ -28,7 +28,7 @@ export default function InvestorPortal() {
           </p>
           <div className="flex flex-wrap gap-5 items-center">
             <Link
-              href="https://angel.supernova.center/SN_deck.pdf"
+              href="https://angel.supernova.center/SN_deck_may.pdf"
               target="_blank"
               className="text-sm tracking-wider bg-supernova-teal text-black font-semibold px-7 py-3.5 no-underline flex items-center gap-2.5 transition-opacity hover:opacity-85"
             >
@@ -56,7 +56,7 @@ export default function InvestorPortal() {
             <div className="flex justify-between mt-2 font-mono text-[10px] md:text-xs ">
               <div className="text-white/40 flex-1">Apr '25</div>
               {/* <div className="text-supernova-teal font-semibold flex-1">Mar '26</div> */}
-              <div className="text-supernova-teal text-right flex-1 pr-8">Apr '26 ↑<br />
+              <div className="text-supernova-teal text-right flex-1 pr-8">May '26 ↑<br />
                 <div className="text-supernova-amber">+ pipeline →</div>
               </div>
             </div>
@@ -66,14 +66,14 @@ export default function InvestorPortal() {
           <div className="px-7 py-4 border-b border-white/7 bg-supernova-teal/3">
             <div className="flex justify-between items-baseline mb-2.5">
               <div className="text-xs text-white/60 tracking-tight">Progress to 100 truck milestone</div>
-              <div className="text-sm text-supernova-teal font-semibold">40 / 100</div>
+              <div className="text-sm text-supernova-teal font-semibold">48 / 100</div>
             </div>
             <div className="h-1.5 bg-white/5 relative overflow-hidden">
-              <div className="absolute left-0 top-0 h-full bg-supernova-teal w-[40%]" />
-              <div className="absolute left-[40%] top-0 h-full bg-supernova-amber/55 w-[20%]" />
+              <div className="absolute left-0 top-0 h-full bg-supernova-teal w-[48%]" />
+              <div className="absolute left-[48%] top-0 h-full bg-supernova-amber/55 w-[20%]" />
             </div>
             <div className="flex justify-between mt-2 text-xs tracking-tight">
-              <div className="text-supernova-teal">40% onboarded</div>
+              <div className="text-supernova-teal">48% onboarded</div>
               <div className="text-supernova-amber">+20% in pipeline</div>
               <div className="text-white/50">100 = $1M ARR</div>
             </div>
@@ -84,21 +84,17 @@ export default function InvestorPortal() {
 
           {/* ACT 1 */}
           <div className="px-7 py-4 border-b border-white/7">
-            <div className="text-xs tracking-[0.1em] text-white/50 uppercase mb-2">Apr 2025 – Mar 2026 · 12 months</div>
-            <div className="flex justify-between items-end gap-3">
-              <div className="text-white/75 font-light leading-relaxed">
-                18 trucks · steady ops · proof of model<br />
-                <span className="text-sm text-white/60 font-mono tracking-tight">$2.3M GTV · $70.2K revenue</span>
-              </div>
-              <div className="text-right shrink-0">
-                <div className="text-xs text-white/50 mb-0.5">avg MRR</div>
-                <div className="font-condensed text-[26px] font-bold text-white/75 tracking-tight">$5.85K</div>
-              </div>
+            <div className="text-xs tracking-[0.1em] text-white/50 uppercase mb-2">Apr 2025 – May 2026 · 13 months</div>
+            <div className="flex flex-col gap-1">
+              <div className="text-white/75 font-light leading-relaxed">18 → 48 trucks · proof of model</div>
+              <div className="text-white/75 font-light leading-relaxed">$3.73M GTV · $112K revenue</div>
+              <div className="text-supernova-teal font-semibold leading-relaxed">$5.85K → $17K → $25K MRR <span className="text-white/75 text-sm leading-relaxed">(Mar · Apr · May)</span></div>
+              
             </div>
           </div>
 
           {/* ACT 2 — April inflection */}
-          <div className="px-7 py-4 border-b border-white/7 bg-supernova-teal/4">
+          {/* <div className="px-7 py-4 border-b border-white/7 bg-supernova-teal/4">
             <div className="text-xs tracking-[0.1em] text-supernova-teal uppercase mb-2">April 2026 · inflection point</div>
             <div className="flex justify-between items-end gap-3">
               <div className="text-white/80 font-light leading-relaxed">
@@ -110,10 +106,10 @@ export default function InvestorPortal() {
                 <div className="font-condensed text-[26px] font-bold text-supernova-teal tracking-tight">$350–400K</div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* ACT 3 — pipeline */}
-          <div className="px-7 py-4 border-b border-white/7 bg-supernova-amber/4">
+          {/* <div className="px-7 py-4 border-b border-white/7 bg-supernova-amber/4">
             <div className="text-xs tracking-[0.1em] text-supernova-amber uppercase mb-2">Next · blocked by dispatcher capacity</div>
             <div className="flex justify-between items-end gap-3">
               <div className="text-white/80 font-light leading-relaxed">
@@ -125,7 +121,7 @@ export default function InvestorPortal() {
                 <div className="font-condensed text-[26px] font-bold text-supernova-amber tracking-tight">20+</div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Bottom note */}
           {/* <div className="px-7 py-4">
@@ -205,7 +201,7 @@ export default function InvestorPortal() {
             </p>
             <div className="flex flex-col border-t border-white/7">
               {[
-                { period: '2026 · Now', ms: '100 trucks · $1M ARR', ex: 'SAFE · $5M valuation cap. Capital deployed into dispatcher hiring and sales ops. Break-even at ~65 trucks. This milestone proves the unit model and unlocks the Seed round.', val: '$500K' },
+                { period: '2026 · Now', ms: '100 trucks · $1M ARR', ex: 'Capital deployed into dispatcher hiring and sales ops. Break-even at ~65 trucks. This milestone proves the unit model and unlocks the Seed round.', val: '$500K' },
                 { period: '2027 · Seed', ms: '250–350 trucks · $2.6–4.5M ARR', ex: 'Priced round targeting Q1 2027. Scales the dispatcher pool and launches the full back-office stack — compliance, ELD, billing, after-hours. AI Co-Worker ① enters the operation.', val: '$2M–$5M' },
                 { period: '2028 · Series A', ms: '650–1,000+ trucks · $8–16M ARR', ex: 'Full back-office stack at scale. AI Co-Worker ② takes over execution. Human team manages exceptions. Cost structure flattens as revenue compounds. The infrastructure is fully autonomous.', val: '$10M–$20M' },
                 // { period: 'Pre-seed return', ms: 'At $5M cap · Series A exit', ex: 'At 7–10× revenue on a $70M–$160M exit. Pre-seed investors entering at $5M cap achieve 14–32× return. The $500K today is the earliest position in the cap table.', val: '14–32×', amber: true }
@@ -225,7 +221,7 @@ export default function InvestorPortal() {
             <div className="p-8 pb-6 border-b border-white/7">
               <div className="text-sm text-supernova-teal tracking-widest uppercase mb-2">Pre-seed round · Raising now</div>
               <div className="font-condensed text-[72px] font-bold text-supernova-teal leading-none tracking-tight mb-2">$500K</div>
-              <div className="text-sm text-white/50 tracking-widest uppercase">SAFE · $5M valuation cap</div>
+              <div className="text-sm text-white/50 tracking-widest uppercase">SAFE</div>
             </div>
             {[
               { l: 'Instrument', v: 'SAFE note' },
@@ -245,7 +241,7 @@ export default function InvestorPortal() {
             <div className="p-8 pt-6">
               <div className="text-sm text-white/50 tracking-[0.08em] uppercase mb-3.5">Contact the founders</div>
               <Link href="mailto:mihail@supernova.center" className="block text-white no-underline mb-2 transition-colors hover:text-supernova-teal">mihail@supernova.center</Link>
-              <Link href="mailto:robert@supernova.center" className="block text-white no-underline mb-2 transition-colors hover:text-supernova-teal">robert@supernova.center</Link>
+              {/* <Link href="mailto:robert@supernova.center" className="block text-white no-underline mb-2 transition-colors hover:text-supernova-teal">robert@supernova.center</Link> */}
               <Link href="https://supernova.center" target="_blank" className="block text-white no-underline transition-colors hover:text-supernova-teal">supernova.center</Link>
             </div>
           </div>

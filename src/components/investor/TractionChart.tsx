@@ -28,7 +28,7 @@ export default function TractionChart() {
       ctx.scale(dpr, dpr);
 
       // Data (includes previous growth adjustments)
-      const hist = [3, 5, 8, 12, 17, 22, 9, 11, 14, 17, 21, 26];
+      const hist = [3, 5, 8, 12, 17, 22, 9, 11, 14, 17, 21, 27, 32];
       const aprCurrent = 42;
       const aprPipeline = 68;
 
@@ -77,7 +77,7 @@ export default function TractionChart() {
       ctx.fillStyle = '#34D399';
       ctx.font = 'bold 10px sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('$32K', ax + aprilBw / 2, ay - 4);
+      ctx.fillText('$25K', ax + aprilBw / 2, ay - 4);
 
       // April pipeline
       const px = ax + aprilBw + 1;
